@@ -4,9 +4,10 @@ import { AtributosPokemonComponent } from './atributos-pokemon/atributos-pokemon
 import { ListarPokemonComponent } from './listar-pokemon/listar-pokemon.component';
 
 const routes: Routes = [
+  { path: '', component: ListarPokemonComponent },
   { path: 'ListarPokemon', component: ListarPokemonComponent },
-
-  { path: 'AtributosPokemon', component: AtributosPokemonComponent}];
+  { path: 'AtributosPokemon/:id', component: AtributosPokemonComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarPokemonComponent } from './listar-pokemon/listar-pokemon.component';
 import { AtributosPokemonComponent } from './atributos-pokemon/atributos-pokemon.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AtributosPokemonComponent } from './atributos-pokemon/atributos-pokemon
     AtributosPokemonComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
