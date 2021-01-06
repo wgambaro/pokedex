@@ -1,15 +1,15 @@
 
-<div class="container">
+<div class="container" *ngFor="let dado of dados">
     <div class="borda-interna">
         <div>
 
             <img class="imagem"
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png">
-            <p class="paragrafo">Pokemon MewDwo</p>
+                [src]="buscarImagem(dado.url)">
+            <p class="paragrafo">Pokemon {{dado.name}}</p>
         </div>
 
         <div>
-            <button [routerLink]="['/AtributosPokemon', 150]" class="botao">Detalhes</button>
+            <button [routerLink]="['/AtributosPokemon', buscarId(dado.url)]" class="botao">Detalhes</button>
         </div>
     </div>
 </div>

@@ -11,11 +11,19 @@ export class ListarPokemonComponent implements OnInit {
 
   constructor(private pokemonservice: PokemonServiceService) { }
   dados: ModelPokemon[] = []
+
   ngOnInit(): void {
     this.pokemonservice.buscarPokemao().subscribe(x => {
       this.dados = x.results
-      console.log(this.dados)
     })
+  }
+
+  buscarId(url: string){
+    return  url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", "")
+  }
+
+  buscarImagem(url: string) {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.buscarId(url)}.png`;
   }
 
 }

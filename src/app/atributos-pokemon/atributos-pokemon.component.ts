@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ImagemPokemon } from '../model/imagem-pokemon';
+import { PokemonServiceService } from '../service/pokemon-service.service';
 
 @Component({
   selector: 'app-atributos-pokemon',
@@ -8,9 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AtributosPokemonComponent implements OnInit {
   id: number = -1;
-  constructor(private route: ActivatedRoute) { }
+  pokemao: ImagemPokemon = new ImagemPokemon();
+  imgPath = ""
+  golpes = ""
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonServiceService) { }
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.imgPath = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`
+    this.pokemonService.buscarDadosPokemao(this.id).subscribe(x=>{
+      this.pokemao = x
+    this.pokemao.moves.forEach(z => {
+
+      this.golpes += z.move.name + " ; "
+      
+
+    })
+      
+    })
   }
 }

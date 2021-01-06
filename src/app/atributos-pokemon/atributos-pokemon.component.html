@@ -2,13 +2,13 @@
     <div class="container">
         <div class="borda-interna">
             <div>
-                <p class="paragrafo">#{{id}} Mewtwo</p>
+                <p class="paragrafo">#{{id}} {{pokemao.name}}</p>
                 <img class="imagem"
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png" />
+                    [src]="imgPath" />
                 <p class="paragrafoss">Atributos</p>
-                <p class="paragrafos">Habitat: Floresta</p>
-                <p class="paragrafos">Espécie: Gato</p>
-                <p class="paragrafos">Cor: Cinza</p>
+                <p class="paragrafos">Tipo: {{pokemao.types[0].type.name}}</p>
+                <p class="paragrafos">Golpes: {{golpes}} </p>
+                 
             </div>
             <div></div>
         </div>
