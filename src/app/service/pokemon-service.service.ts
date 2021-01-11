@@ -5,6 +5,7 @@ import { from, Observable } from 'rxjs';
 import { ImagemPokemon } from '../model/imagem-pokemon';
 import { EvolucaoPokemon} from '../model/evolucao-pokemon';
 import { ChainPokemon } from '../model/chain-pokemon';
+import { LocaPokemon } from '../model/loca-pokemon';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,8 @@ export class PokemonServiceService {
   buscarDadosPokemao(id: number):Observable<ImagemPokemon>{
     return this.http.get<ImagemPokemon>(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
-  buscarEvolucaoPokemon(id: number):Observable<ChainPokemon>{
-    return this.http.get<ChainPokemon>(`https://pokeapi.co/api/v2/evolution-chain/${id}/`)
+  buscarLocaPokemon(id: number):Observable<LocaPokemon>{
+    return this.http.get<LocaPokemon>(`https://pokeapi.co/api/v2/location-area/296/`)
+  }
   }
 }

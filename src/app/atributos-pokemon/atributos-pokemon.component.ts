@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImagemPokemon } from '../model/imagem-pokemon';
 import { PokemonServiceService } from '../service/pokemon-service.service';
-import { EvolucaoPokemon } from '../model/evolucao-pokemon';
+import { LocaPokemon } from '../model/loca-pokemon';
 @Component({
   selector: 'app-atributos-pokemon',
   templateUrl: './atributos-pokemon.component.html',
@@ -13,7 +13,7 @@ export class AtributosPokemonComponent implements OnInit {
   pokemao: ImagemPokemon = new ImagemPokemon();
   imgPath = ""
   golpes = ""
-  evolucao = ""
+  localizacao = ""
   constructor(private route: ActivatedRoute, private pokemonService: PokemonServiceService) { }
 
   ngOnInit() {
@@ -26,10 +26,7 @@ export class AtributosPokemonComponent implements OnInit {
 
         this.golpes += z.move.name + " ; "
       })
-      this.pokemonService.buscarEvolucaoPokemon(this.pokemao.id).subscribe(y => {
-        this.evolucao += y.chain.evolves_to[0].species.name
-
-      })
+    this.localizacao.  
     })
   }
 }
