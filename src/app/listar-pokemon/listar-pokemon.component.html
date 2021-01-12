@@ -1,15 +1,15 @@
 
-<div class="container" *ngFor="let dado of dados">
-    <div class="borda-interna">
-        <div>
+<div class="borda-externa">
+    <div class="container" *ngFor="let dado of dados">
+        <div class="borda-interna">
+            <div>
+                <img class="imagem" [src]="buscarImagem(dado.url)">
+                <p class="paragrafo">Pokemon {{dado.name}}</p>
+            </div>
 
-            <img class="imagem"
-                [src]="buscarImagem(dado.url)">
-            <p class="paragrafo">Pokemon {{dado.name}}</p>
-        </div>
-
-        <div>
-            <button [routerLink]="['/AtributosPokemon', buscarId(dado.url)]" class="botao">Detalhes</button>
+            <div>
+                <button [routerLink]="['/AtributosPokemon', buscarId(dado.url)]" class="botao">Detalhes</button>
+            </div>
         </div>
     </div>
 </div>

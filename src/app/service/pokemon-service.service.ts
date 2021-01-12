@@ -19,7 +19,7 @@ export class PokemonServiceService {
     return this.http.get<ImagemPokemon>(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
   buscarLocaPokemon(id: number):Observable<LocaPokemon>{
-    return this.http.get<LocaPokemon>(`https://pokeapi.co/api/v2/location-area/296/`)
+    return this.http.get<LocaPokemon>(`https://pokeapi.co/api/v2/location-area/${id}/`)
   }
   }
-}
+

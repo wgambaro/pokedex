@@ -1,5 +1,5 @@
+import { ModelPokemon } from "./model-pokemon";
+
 export class LocaPokemon {
-    public number = 1;
-    public location_area = {};
-    public name: string = "";
+    public location: ModelPokemon = new ModelPokemon;
 }

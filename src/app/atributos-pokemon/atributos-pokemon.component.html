@@ -1,19 +1,19 @@
-<div class="alinhamento">
-    <div class="container">
-        <div class="borda-interna">
-            <div>
-                <p class="paragrafo">#{{id}} {{pokemao.name}}</p>
-                <img class="imagem"
-                    [src]="imgPath" />
-                <p class="paragrafoss">Atributos</p>
-                <p class="paragrafos">Tipo: {{pokemao.types[0].type.name}}</p>
-                <p class="paragrafos">Localização: {{}}</p>
-                <p class="paragrafos">Golpes: {{golpes}} </p>
-                 
+<div class="borda-externa">
+    <div class="alinhamento">
+        <div class="container">
+            <div class="borda-interna">
+                <div>
+                    <p class="paragrafo">#{{id}} {{pokemao.name}}</p>
+                    <img class="imagem" [src]="imgPath" />
+                    <p class="paragrafoss">Atributos</p>
+                    <p class="paragrafos">Tipo: {{pokemao.types[0].type.name}}</p>
+                    <p class="paragrafos">Localização: {{localizacao}} </p>
+                    <p class="paragrafos">Golpes: {{golpes}}</p>
+
+                </div>
             </div>
         </div>
     </div>
-
     <button [routerLink]="['/ListarPokemon']" class="botao">Voltar</button>
 
 </div>

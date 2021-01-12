@@ -52,3 +52,30 @@ body{
     padding-bottom: 18px;
     border-radius: 10px;
 }
+
+.imagemSuperior{
+    
+    width: 300px;
+}
+
+.titulo{
+    
+    color:#392f42;
+    font-weight: 900;
+    font-size: 75px;
+    margin: 8px; 
+    margin-bottom: 10px;
+}
+.mesmaLinha{
+    display: inline-block;
+    height: 1px;
+}
+
+.linha{
+    border-width: 2px;
+    border-color: yellow;
+    margin: 0px;
+}
+.borda-externa{
+    background-color: black;
+}

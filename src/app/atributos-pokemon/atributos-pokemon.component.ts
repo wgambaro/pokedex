@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImagemPokemon } from '../model/imagem-pokemon';
 import { PokemonServiceService } from '../service/pokemon-service.service';
-import { LocaPokemon } from '../model/loca-pokemon';
+// import { LocaPokemon } from '../model/loca-pokemon';
 @Component({
   selector: 'app-atributos-pokemon',
   templateUrl: './atributos-pokemon.component.html',
@@ -21,12 +21,14 @@ export class AtributosPokemonComponent implements OnInit {
     this.imgPath = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`
     this.pokemonService.buscarDadosPokemao(this.id).subscribe(x => {
       this.pokemao = x
-      
+
       this.pokemao.moves.forEach(z => {
 
         this.golpes += z.move.name + " ; "
       })
-    this.localizacao.  
+      this.pokemonService.buscarLocaPokemon(this.id).subscribe(y => {
+        this.localizacao = y.location.name
+      })
     })
   }
 }
